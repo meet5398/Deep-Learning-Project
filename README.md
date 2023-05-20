@@ -37,3 +37,63 @@ The model's accuracy and confusion matrix are shown in the output. The confusion
 
 - [MNIST Dataset](https://keras.io/api/datasets/mnist/)
 - [TensorFlow Documentation](https://www.tensorflow.org/api_docs)
+
+## Project:02 - Home Prices Prediction using Gradient Descent
+
+#### This project aims to predict home prices in Bangalore using two gradient descent algorithms: batch gradient descent and stochastic gradient descent. 
+#### The code takes into account the area and number of bedrooms as features to predict the home prices.
+
+### Dependencies
+- numpy
+- pandas
+- matplotlib
+
+### Running the Code
+1. Ensure that you have the required dependencies installed.
+2. Download the "homeprices_banglore.csv" dataset and place it in the same directory as the code.
+3. Run the code in a Python environment.
+
+### Code Explanation
+The code is divided into several sections, each performing a specific task. Here's a breakdown of the major sections:
+
+1. Data Preprocessing:
+   - Scaling: The area and number of bedrooms features are scaled using the MinMaxScaler from sklearn.preprocessing.
+
+2. Batch Gradient Descent:
+   - The batch_gradient_descent function performs batch gradient descent to optimize the weights and biases.
+   - It takes the scaled features and target values as inputs, along with the number of epochs and learning rate.
+   - The function iteratively updates the weights and biases based on the calculated gradients and the cost function.
+   - The cost and epoch lists are populated during the training process.
+   - The function returns the optimized weights, biases, final cost, and the lists of costs and epochs.
+
+3. Prediction:
+   - The predict function takes the area, number of bedrooms, weights, and biases as inputs.
+   - It scales the input values and predicts the home price using the trained weights and biases.
+   - The function returns the predicted price in the original scale.
+
+4. Stochastic Gradient Descent:
+   - The stochastic_gradient_descent function implements stochastic gradient descent.
+   - It randomly selects a sample from the dataset and updates the weights and biases based on that sample.
+   - The cost and epoch lists are populated during the training process.
+   - The function returns the optimized weights, biases, final cost, and the lists of costs and epochs.
+
+5. Plotting:
+   - The code includes plotting functions to visualize the cost vs. epochs for both batch and stochastic gradient descent.
+
+### Usage Example
+After running the code, you can use the predict function to make predictions. Here's an example:
+
+predicted_price = predict(2600, 4, w, b)
+print("Predicted Price:", predicted_price)
+
+
+### Additional Information
+- The code includes comments to explain each section and its functionality.
+- Batch gradient descent considers the entire dataset for each update, while stochastic gradient descent randomly selects a sample for each update.
+- The cost vs. epochs plots show the decreasing trend of the cost function as the models learn.
+
+### References
+- [NumPy Documentation](https://numpy.org/doc/)
+- [Pandas Documentation](https://pandas.pydata.org/docs/)
+- [Matplotlib Documentation](https://matplotlib.org/stable/contents.html)
+
